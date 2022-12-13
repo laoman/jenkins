@@ -50,9 +50,12 @@ pipeline {
             }
         }
 
-         stage('Test') {
+         stage('Test 2') {
             steps {
-                sh " echo hello"
+                script{
+                   println("${PARAMETER_01}")
+                }
+
             }
         }
     }
