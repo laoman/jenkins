@@ -29,7 +29,8 @@ pipeline {
        stage('Cleanup') {
             steps {
                script{
-                  cleanWs()
+                 // cleanWs()
+                 println("no clean")
                 }
             }
         }
