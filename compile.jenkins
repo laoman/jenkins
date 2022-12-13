@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    stages {
+        
+       stage('Cleanup') {
+            steps {
+               script{
+                  cleanWs()
+                }
+            }
+        }
+        
+
+        stage('Download Code') {
+            steps {
+                script{
+                    
+                   sh """
+                        git clone ${Git_Repo}
+                        ls -l
+                   """
+                }
+            }
+        }
+        
+         stage('Run') {
+            steps {
+                
+               script{
+                    echo 'Running '
+                }
+            }
+        }
+        
+        
+         stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+    }
+}
